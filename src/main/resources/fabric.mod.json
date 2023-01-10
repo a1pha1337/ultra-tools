@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "tutorial",
+  "version": "${version}",
+
+  "name": "Ultra tools",
+  "description": "This mod adds various ultra tools, like 3x3 pickaxes :)",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://github.com/a1pha1337",
+    "sources": "https://github.com/a1pha1337"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/ultratools/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.a1pha1337.ultratools.initializers.MainInitializer"
+    ],
+    "client": [
+      "ru.a1pha1337.ultratools.initializers.ClientInitializer"
+    ],
+    "server": [
+      "ru.a1pha1337.ultratools.initializers.ServerInitializer"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric-api": ">=0.72.0+1.19.2",
+    "minecraft": "~1.19.2",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

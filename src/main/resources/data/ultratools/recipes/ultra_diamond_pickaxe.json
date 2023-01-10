@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    " I ",
+    " I "
+  ],
+  "key": {
+    "I": {
+      "item": "ultratools:iron_rod"
+    },
+    "B": {
+      "item": "minecraft:diamond_block"
+    }
+  },
+  "result": {
+    "item": "ultratools:ultra_diamond_pickaxe"
+  }
+}

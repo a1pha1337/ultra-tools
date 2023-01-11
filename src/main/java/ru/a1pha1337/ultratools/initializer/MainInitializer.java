@@ -1,9 +1,11 @@
-package ru.a1pha1337.ultratools.initializers;
+package ru.a1pha1337.ultratools.initializer;
 
+import ru.a1pha1337.ultratools.item.IronRodItem;
+import ru.a1pha1337.ultratools.item.MultipleMiningToolItem;
+import ru.a1pha1337.ultratools.item.UltraDiamondPickaxeItem;
+import ru.a1pha1337.ultratools.item.material.UltraDiamondToolMaterial;
+import ru.a1pha1337.ultratools.ModSettings;
 import net.fabricmc.api.ModInitializer;
-import ru.a1pha1337.ultratools.items.IronRodItem;
-import ru.a1pha1337.ultratools.items.UltraDiamondPickaxeItem;
-import ru.a1pha1337.ultratools.items.materials.UltraDiamondToolMaterial;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -11,12 +13,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import ru.a1pha1337.ultratools.ModSettings;
 
 public class MainInitializer implements ModInitializer {
-
 	private static final Item ITEM_IRON_ROD = new IronRodItem(new FabricItemSettings());
-	private static final UltraDiamondPickaxeItem ULTRA_DIAMOND_PICKAXE = new UltraDiamondPickaxeItem(UltraDiamondToolMaterial.INSTANCE,
+	private static final MultipleMiningToolItem ULTRA_DIAMOND_PICKAXE = new UltraDiamondPickaxeItem(UltraDiamondToolMaterial.INSTANCE,
 			7, -2.8f, new FabricItemSettings());
 
 	@Override

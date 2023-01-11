@@ -1,4 +1,4 @@
-package ru.a1pha1337.ultratools.items;
+package ru.a1pha1337.ultratools.item;
 
 import net.minecraft.item.Item;
 

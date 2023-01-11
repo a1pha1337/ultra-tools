@@ -1,4 +1,4 @@
-package ru.a1pha1337.ultratools.initializers;
+package ru.a1pha1337.ultratools.initializer;
 
 import net.fabricmc.api.DedicatedServerModInitializer;
 import ru.a1pha1337.ultratools.utils.Logger;

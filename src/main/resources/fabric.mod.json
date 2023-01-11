@@ -19,13 +19,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ru.a1pha1337.ultratools.initializers.MainInitializer"
+      "ru.a1pha1337.ultratools.initializer.MainInitializer"
     ],
     "client": [
-      "ru.a1pha1337.ultratools.initializers.ClientInitializer"
+      "ru.a1pha1337.ultratools.initializer.ClientInitializer"
     ],
     "server": [
-      "ru.a1pha1337.ultratools.initializers.ServerInitializer"
+      "ru.a1pha1337.ultratools.initializer.ServerInitializer"
     ]
   },
 

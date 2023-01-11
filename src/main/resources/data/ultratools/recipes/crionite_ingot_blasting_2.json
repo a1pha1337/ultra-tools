@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "ultratools:raw_crionite"
+  },
+  "result": "ultratools:crionite_ingot",
+  "experience": 2.0,
+  "cookingtime": 500
+}

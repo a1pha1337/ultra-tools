@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "ultratools:item/iron_rod"
+    "layer0": "ultratools:item/crionite_ingot"
   }
 }

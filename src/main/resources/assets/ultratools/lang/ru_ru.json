@@ -2,5 +2,11 @@
   "itemGroup.ultratools.base": "Ультра инструменты",
 
   "item.ultratools.iron_rod": "Железный стержень",
-  "item.ultratools.ultra_diamond_pickaxe" : "Ультра-алмазная кирка"
+  "item.ultratools.raw_crionite": "Сырой крионит",
+  "item.ultratools.crionite_ingot": "Слиток крионита",
+  "item.ultratools.crionite_alloy": "Крионито-незеритовый композит",
+  "item.ultratools.crionite_plating": "Крионитовая пластина",
+  "item.ultratools.crionite_pickaxe": "Крионитовая кирка",
+
+  "block.ultratools.deepslate_crionite_ore": "Крионитовая руда"
 }

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "ultratools:deepslate_crionite_ore"
+  },
+  "result": "ultratools:crionite_ingot",
+  "experience": 2.0,
+  "cookingtime": 1000
+}

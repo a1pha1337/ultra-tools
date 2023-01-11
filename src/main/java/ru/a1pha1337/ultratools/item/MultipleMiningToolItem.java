@@ -3,6 +3,7 @@ package ru.a1pha1337.ultratools.item;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.MiningToolItem;
@@ -35,6 +36,10 @@ public class MultipleMiningToolItem extends MiningToolItem implements PlayerBloc
 
     @Override
     public boolean beforeBlockBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity) {
+        if (state.getBlock() == Blocks.BEDROCK && !player.isCreative()) {
+            return false;
+        }
+
         if (!stopHandlingEvents && player.getMainHandStack().getItem() instanceof MultipleMiningToolItem) {
             ServerPlayerInteractionManager manager = new ServerPlayerInteractionManager((ServerPlayerEntity) player);
             HitResult hitResult = player.raycast(20, 0, false);

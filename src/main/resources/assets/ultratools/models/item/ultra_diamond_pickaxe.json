@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "ultratools:item/ultra_diamond_pickaxe"
-  }
-}

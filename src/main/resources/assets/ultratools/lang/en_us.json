@@ -2,5 +2,11 @@
   "itemGroup.ultratools.base": "Ultra tools",
 
   "item.ultratools.iron_rod": "Iron rod",
-  "item.ultratools.ultra_diamond_pickaxe" : "Ultra diamond pickaxe"
+  "item.ultratools.raw_crionite": "Raw crionite",
+  "item.ultratools.crionite_ingot": "Crionite ingot",
+  "item.ultratools.crionite_alloy": "Crionite-netherite composit",
+  "item.ultratools.crionite_plating": "Crionite plating",
+  "item.ultratools.crionite_pickaxe": "Crionite pickaxe",
+
+  "block.ultratools.deepslate_crionite_ore": "Crionite ore"
 }

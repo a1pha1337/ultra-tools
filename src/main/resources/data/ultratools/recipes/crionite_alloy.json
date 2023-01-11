@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "NNN",
+    "CCC"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "C": {
+      "item": "ultratools:crionite_ingot"
+    }
+  },
+  "result": {
+    "item": "ultratools:crionite_alloy"
+  }
+}

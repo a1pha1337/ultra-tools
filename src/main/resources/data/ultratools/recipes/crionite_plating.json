@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "ultratools:crionite_alloy"
+  },
+  "result": "ultratools:crionite_plating",
+  "experience": 0,
+  "cookingtime": 500
+}

@@ -1,20 +1,21 @@
 package ru.a1pha1337.ultratools.item.material;
 
-import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class UltraDiamondToolMaterial implements ToolMaterial {
-    public static final UltraDiamondToolMaterial INSTANCE = new UltraDiamondToolMaterial();
+import static ru.a1pha1337.ultratools.registrar.MainRegistrar.CRIONITE_PLATING;
+
+public class CrioniteToolMaterial implements ToolMaterial {
+    public static final CrioniteToolMaterial INSTANCE = new CrioniteToolMaterial();
 
     @Override
     public int getDurability() {
-        return 1500;
+        return 6000;
     }
 
     @Override
     public float getMiningSpeedMultiplier() {
-        return 8F;
+        return 8f;
     }
 
     @Override
@@ -24,7 +25,7 @@ public class UltraDiamondToolMaterial implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 4;
+        return 5;
     }
 
     @Override
@@ -34,6 +35,6 @@ public class UltraDiamondToolMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.DIAMOND_BLOCK);
+        return Ingredient.ofItems(CRIONITE_PLATING);
     }
 }

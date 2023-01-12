@@ -3,7 +3,7 @@ package ru.a1pha1337.ultratools.item.material;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-import static ru.a1pha1337.ultratools.registrar.MainRegistrar.CRIONITE_PLATING;
+import static ru.a1pha1337.ultratools.item.Items.CRIONITE_PLATING;
 
 public class CrioniteToolMaterial implements ToolMaterial {
     public static final CrioniteToolMaterial INSTANCE = new CrioniteToolMaterial();

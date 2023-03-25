@@ -41,7 +41,7 @@ public class MultipleMiningToolItem extends MiningToolItem implements PlayerBloc
         }
 
         if (!stopHandlingEvents && player.getMainHandStack().getItem() instanceof MultipleMiningToolItem) {
-            ServerPlayerInteractionManager manager = new ServerPlayerInteractionManager((ServerPlayerEntity) player);
+            ServerPlayerInteractionManager manager = new ServerPlayerInteractionManager((ServerPlayerEntity)player);
             HitResult hitResult = player.raycast(20, 0, false);
 
             this.stopHandlingEvents = true;

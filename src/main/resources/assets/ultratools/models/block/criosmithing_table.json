@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "ultratools:block/criosmithing_table_bottom",
+    "up": "ultratools:block/criosmithing_table_top",
+    "north": "ultratools:block/criosmithing_table_side",
+    "east": "ultratools:block/criosmithing_table_front",
+    "south": "ultratools:block/criosmithing_table_side",
+    "west": "ultratools:block/criosmithing_table_front",
+    "particle": "ultratools:block/criosmithing_table_front"
+  }
+}

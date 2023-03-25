@@ -5,7 +5,13 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Block;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,6 +20,8 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
@@ -21,14 +29,14 @@ import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import ru.a1pha1337.ultratools.ModSettings;
 import ru.a1pha1337.ultratools.block.Blocks;
+import ru.a1pha1337.ultratools.block.CriosmithingTableBlockEntity;
 import ru.a1pha1337.ultratools.item.*;
 import ru.a1pha1337.ultratools.utils.Utils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import static net.minecraft.item.Items.EMERALD;
+import static ru.a1pha1337.ultratools.entity.Entities.CRIONITE_SLIME;
 import static ru.a1pha1337.ultratools.utils.Logger.LOGGER;
 import static ru.a1pha1337.ultratools.item.Items.*;
 import static ru.a1pha1337.ultratools.block.Blocks.*;
@@ -50,6 +58,11 @@ public final class MainRegistrar implements ModRegistrar {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-32))
             ));
 
+    public static final BlockEntityType<CriosmithingTableBlockEntity> CRIOSMITHING_TABLE_BLOCK_ENTITY = Registry.register(
+            Registry.BLOCK_ENTITY_TYPE,
+            new Identifier(ModSettings.NAMESPACE, "criosmithing_table_entity"),
+            FabricBlockEntityTypeBuilder.create(CriosmithingTableBlockEntity::new, CRIOSMITHING_TABLE).build()
+    );
 
     @Override
     public void register() {
@@ -76,6 +89,10 @@ public final class MainRegistrar implements ModRegistrar {
             itemStacks.add(new ItemStack(blockEntry.getValue()));
         }
 
+        // Entities
+        Registry.register(Registry.ENTITY_TYPE, new Identifier(ModSettings.NAMESPACE, "crionite_slime"),
+                CRIONITE_SLIME);
+
         // Iteam group
         FabricItemGroupBuilder.create(new Identifier(ModSettings.NAMESPACE, "base"))
                 .icon(() -> new ItemStack(CRIONITE_PICKAXE))
@@ -94,8 +111,17 @@ public final class MainRegistrar implements ModRegistrar {
                 RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                         new Identifier(ModSettings.NAMESPACE, "overworld_deepslate_crionite_ore")));
 
+        FabricDefaultAttributeRegistry.register(CRIONITE_SLIME,
+                SlimeEntity.createMobAttributes().add(EntityAttributes.GENERIC_ATTACK_DAMAGE));
+
         // Events
         PlayerBlockBreakEvents.BEFORE.register(CRIONITE_PICKAXE);
+        PlayerBlockBreakEvents.BEFORE.register((PlayerBlockBreakEvents.Before)DEEPSLATE_CRIONITE_ORE);
+
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.TOOLSMITH, 5,
+                factories -> factories.add(((entity, random) ->
+                        new TradeOffer(new ItemStack(EMERALD, 20), new ItemStack(SMITHING_STUFF),
+                        1, 1, 0.02f))));
 
         LOGGER.info("Mod objects registration completed successfully!");
     }

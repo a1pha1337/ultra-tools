@@ -4,4 +4,6 @@ import net.minecraft.block.Block;
 
 public final class Blocks {
     public static final Block DEEPSLATE_CRIONITE_ORE = new CrioniteOreBlock();
+
+    public static final Block CRIOSMITHING_TABLE = new CriosmithingTableBlock();
 }

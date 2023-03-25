@@ -9,4 +9,6 @@ public final class Items {
     public static final Item CRIONITE_INGOT = new CrioniteIngotItem();
     public static final Item CRIONITE_ALLOY = new CrioniteAlloyItem();
     public static final Item CRIONITE_PLATING = new CrionitePlatingItem();
+
+    public static final Item SMITHING_STUFF = new SmithingStuffItem();
 }
